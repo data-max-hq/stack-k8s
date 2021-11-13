@@ -1,0 +1,1 @@
+helm upgrade --install --namespace customer-ns fastapi chart

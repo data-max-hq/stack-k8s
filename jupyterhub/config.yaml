@@ -10,9 +10,8 @@ ingress:
 
 singleuser:
   image:
-    name: jupyter/all-spark-notebook
+    name: jupyter/minimal-notebook
     tag: latest
-    imagePullPolicy: IfNotPresents
   storage:
     type: none
 #singleuser:

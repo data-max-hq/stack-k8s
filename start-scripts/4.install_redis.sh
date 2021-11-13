@@ -1,5 +1,5 @@
 #!/bin/zsh
-NAMESPACE=customer_ns
+NAMESPACE=customer-ns
 helm repo add bitnami https://charts.bitnami.com/bitnami
 helm repo update
 helm install redis-test \

@@ -1,5 +1,5 @@
 #!/bin/zsh
-NAMESPACE=customer_ns
+NAMESPACE=customer-ns
 helm repo add jupyterhub https://jupyterhub.github.io/helm-chart/
 helm repo update
 

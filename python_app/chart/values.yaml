@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: 'test-fastapi'
-  tag: latest
+  tag: 0.2
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []

@@ -20,7 +20,5 @@ spec:
         - name: {{ .Chart.Name }} 
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           ports:
-            - containerPort: 8000 
-          envFrom:
-            - configMapRef:
-                name: fastapi-config
+            - name: http
+              containerPort: 8000

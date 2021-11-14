@@ -10,4 +10,5 @@ helm upgrade --cleanup-on-fail \
   --namespace $NAMESPACE \
   --create-namespace \
   --version=1.2.0 \
-  --values config.yaml
+  --values config_jupyterhub.yaml && \
+kubectl rollout status  -n $NAMESPACE deployment/hub -w

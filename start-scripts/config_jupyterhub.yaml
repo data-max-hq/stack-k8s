@@ -4,9 +4,7 @@ proxy:
     type: ClusterIP
 
 ingress:
-  enabled: true
-  hosts:
-    - "myplatform.ai"
+  enabled: false
 
 singleuser:
   image:

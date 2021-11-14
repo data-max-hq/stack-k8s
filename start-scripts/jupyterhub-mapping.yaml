@@ -1,0 +1,12 @@
+apiVersion: getambassador.io/v3alpha1
+kind:  Mapping
+metadata:
+  name:  jupyterhub-mapping
+  namespace: customer-ns
+spec:
+  hostname: "*"
+  prefix: /hub/
+  service: proxy-public
+  rewrite: /
+  allow_upgrade:
+    - websocket

@@ -5,8 +5,8 @@ metadata:
   namespace: customer-ns
 spec:
   hostname: "*"
-  prefix: /hub/
+  prefix: /jupyter/
   service: proxy-public
-  rewrite: /
+  rewrite: /jupyter/
   allow_upgrade:
     - websocket

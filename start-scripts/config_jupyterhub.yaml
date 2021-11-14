@@ -17,7 +17,7 @@ singleuser:
 #    capacity: 2Gi
 
 hub:
-  baseUrl: /jupyterhub
+  baseUrl: /jupyter
   config:
     Authenticator:
       admin_users:

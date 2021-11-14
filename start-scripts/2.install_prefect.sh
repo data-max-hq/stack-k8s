@@ -3,5 +3,9 @@ helm repo add prefecthq https://prefecthq.github.io/server/
 helm repo update
 NAMESPACE=customer-ns
 NAME=prefect-server
-helm install --create-namespace --namespace $NAMESPACE  $NAME prefecthq/prefect-server && \
-kubectl rollout status  -n $NAMESPACE deployment/prefect-server-ui -w
+helm install --create-namespace --namespace $NAMESPACE  $NAME prefecthq/prefect-server \
+  --set jobs.createTenant.enabled=true && \
+  --set apollo.ingress.ingressClassName=ambassador && \
+  --set ui.ingress.ingressClassName=ambassador && \
+kubectl rollout status  -n $NAMESPACE deployment/prefect-server-ui -w && \
+kubectl rollout status  -n $NAMESPACE deployment/prefect-server-graphql -w

@@ -6,7 +6,7 @@ metadata:
   namespace: customer-ns
 spec:
   hostname: "*"
-  prefix: /prefect/
+  prefix: /prefect
   service: prefect-server-ui:8080
   rewrite: /
 ---
@@ -17,7 +17,7 @@ metadata:
   namespace: customer-ns
 spec:
   prefix: /graphql
-  rewrite: /graphql/
+  rewrite: /
   service: prefect-server-apollo:4200
-  host: "*"
+  hostname: "*"
 ---

@@ -3,7 +3,7 @@ NAMESPACE=customer-ns
 NAME=redis-test
 helm repo add bitnami https://charts.bitnami.com/bitnami
 helm repo update
-helm install --namespace $NAMESPACE \
+helm install --create-namespace --namespace $NAMESPACE \
  --set persistence.storageClass=nfs-client,redis.replicas.persistence.storageClass=nfs-client \
  --set volumePermissions.enabled=true \
  $NAME bitnami/redis

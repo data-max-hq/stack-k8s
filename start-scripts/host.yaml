@@ -5,3 +5,6 @@ metadata:
   namespace: customer-ns
 spec:
   hostname: "*"
+  requestPolicy:
+    insecure:
+      action: Route

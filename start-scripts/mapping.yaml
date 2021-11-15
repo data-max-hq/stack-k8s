@@ -1,0 +1,47 @@
+---
+apiVersion: getambassador.io/v3alpha1
+kind:  Mapping
+metadata:
+  name:  fastapi-mapping
+  namespace: customer-ns
+spec:
+  hostname: "*"
+  prefix: /fastapi/
+  service: fastapi
+  rewrite: /
+---
+apiVersion: getambassador.io/v3alpha1
+kind:  Mapping
+metadata:
+  name:  jupyterhub-mapping
+  namespace: customer-ns
+spec:
+  hostname: "*"
+  prefix: /jupyter/
+  service: proxy-public
+  rewrite: /jupyter/
+  allow_upgrade:
+    - websocket
+---
+apiVersion: getambassador.io/v3alpha1
+kind:  Mapping
+metadata:
+  name:  prefect-ui-mapping
+  namespace: customer-ns
+spec:
+  hostname: "*"
+  prefix: /prefect
+  service: prefect-server-ui:8080
+  rewrite: /
+---
+apiVersion: getambassador.io/v3alpha1
+kind: Mapping
+metadata:
+  name: prefect-apollo-mapping
+  namespace: customer-ns
+spec:
+  prefix: /graphql
+  rewrite: /
+  service: prefect-server-apollo:4200
+  hostname: "*"
+---
